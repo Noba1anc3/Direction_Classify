@@ -1,0 +1,700 @@
+C:\Users\Hu\Miniconda3\envs\pywork\python.exe G:/054/表格方向检测/表格方向检测/线性回归方法/COS损失方法/use_cos_loss/predict_tf2.py
+2020-09-17 14:50:57.724943: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cudart64_101.dll'; dlerror: cudart64_101.dll not found
+2020-09-17 14:50:57.725316: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2020-09-17 14:51:00.367888: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library nvcuda.dll
+2020-09-17 14:51:00.396640: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GTX 965M computeCapability: 5.2
+coreClock: 1.15GHz coreCount: 8 deviceMemorySize: 2.00GiB deviceMemoryBandwidth: 74.65GiB/s
+2020-09-17 14:51:00.400394: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cudart64_101.dll'; dlerror: cudart64_101.dll not found
+2020-09-17 14:51:00.403946: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cublas64_10.dll'; dlerror: cublas64_10.dll not found
+2020-09-17 14:51:00.407290: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2020-09-17 14:51:00.410557: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2020-09-17 14:51:00.414263: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cusolver64_10.dll'; dlerror: cusolver64_10.dll not found
+2020-09-17 14:51:00.417619: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cusparse64_10.dll'; dlerror: cusparse64_10.dll not found
+2020-09-17 14:51:00.420914: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cudnn64_7.dll'; dlerror: cudnn64_7.dll not found
+2020-09-17 14:51:00.421228: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1592] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2020-09-17 14:51:00.422294: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2020-09-17 14:51:00.423286: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1096] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-09-17 14:51:00.423780: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102]      
+2020-09-17 14:51:01.052601: W tensorflow/core/graph/graph_constructor.cc:773] Node 'StatefulPartitionedCall' has 75 outputs but the _output_shapes attribute specifies shapes for 493 outputs. Output shapes may be inaccurate.
+2020-09-17 14:51:01.315002: W tensorflow/core/graph/graph_constructor.cc:773] Node 'StatefulPartitionedCall' has 1 outputs but the _output_shapes attribute specifies shapes for 160 outputs. Output shapes may be inaccurate.
+2020-09-17 14:51:01.348403: W tensorflow/core/graph/graph_constructor.cc:773] Node 'StatefulPartitionedCall' has 1 outputs but the _output_shapes attribute specifies shapes for 160 outputs. Output shapes may be inaccurate.
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_0.jpg[307.3717]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_1.jpg[62.331905]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_10.jpg[232.90382]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_11.jpg[20.801023]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_12.jpg[210.68256]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_13.jpg[238.89597]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_14.jpg[114.04905]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_15.jpg[275.72455]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_16.jpg[142.05151]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_17.jpg[269.9199]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_18.jpg[124.665634]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_19.jpg[113.71059]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_2.jpg[213.75453]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_20.jpg[131.57718]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_21.jpg[77.161476]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_22.jpg[165.8961]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_23.jpg[86.225235]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_24.jpg[213.66249]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_25.jpg[321.12122]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_26.jpg[36.891544]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_27.jpg[126.55481]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_28.jpg[153.33565]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_29.jpg[132.08484]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_3.jpg[87.87185]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_30.jpg[118.76229]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_31.jpg[123.64701]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_32.jpg[52.78692]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_33.jpg[13.520706]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_34.jpg[113.69397]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_35.jpg[48.429596]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_36.jpg[138.24913]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_37.jpg[211.54271]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_39.jpg[196.21425]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_40.jpg[105.62022]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_41.jpg[48.918736]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_42.jpg[42.85331]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_43.jpg[274.66916]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_44.jpg[194.08875]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_45.jpg[258.2741]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_46.jpg[101.663574]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_47.jpg[55.45469]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_48.jpg[103.98711]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_49.jpg[64.42666]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_5.jpg[99.649475]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_7.jpg[260.51303]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_8.jpg[213.74611]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chepiao_9.jpg[92.55534]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_1.jpg[287.39148]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_10.jpg[168.8963]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_11.jpg[110.27471]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_12.jpg[333.7829]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_13.jpg[87.74321]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_16.jpg[299.8928]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_18.jpeg[61.26218]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_19.jpg[126.96775]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_21.jpg[161.07501]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_22.jpg[173.59499]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_23.jpg[240.81044]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_24.jpg[230.02406]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_25.jpg[76.06097]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_26.jpg[234.4101]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_27.jpg[12.919568]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_28.jpg[214.01239]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_29.jpg[135.24292]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_3.jpg[175.34294]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_30.jpg[91.8799]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_31.jpg[232.00764]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_33.jpg[2.7018087]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_34.jpg[178.18839]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_37.jpg[170.18861]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_38.jpg[271.39276]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_39.jpg[186.2595]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_4.jpg[178.6176]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_40.jpg[24.94249]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_41.jpg[223.4646]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_42.jpg[147.7636]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_43.jpg[81.05369]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_44.jpg[242.42224]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_45.jpg[25.407665]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_46.jpg[148.71573]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_47.jpg[120.65804]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_48.jpg[172.48987]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_49.jpg[141.06944]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_6.jpg[192.42322]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\chuzuchefapiao_9.jpg[155.5713]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\dianzishu_0.jpg[181.62686]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\dianzishu_15.jpg[274.73853]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\dianzishu_19.jpg[263.78705]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\dianzishu_21.jpg[77.785995]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\dianzishu_22.jpg[213.28265]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\dianzishu_24.jpg[30.975752]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\dianzishu_25.jpg[81.76935]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\dianzishu_29.jpg[33.80918]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\dianzishu_30.jpg[40.32629]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\dianzishu_36.jpg[125.21078]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\dianzishu_40.jpg[234.36926]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\dianzishu_42.jpg[150.84769]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\dianzishu_6.jpg[336.14227]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\gongsibaobiao_23.jpg[151.24232]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\gongsibaobiao_37.jpg[32.6484]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jiaocai_0.jpg[49.896614]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jiaocai_17.jpg[157.94142]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jiaocai_23.jpg[144.37695]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jiaocai_31.jpg[30.602114]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jiaocai_41.jpg[318.88898]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_1.jpg[307.46082]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_10.jpg[83.738625]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_12.jpg[62.057064]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_13.jpg[151.98723]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_14.jpg[277.05505]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_15.jpg[199.19296]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_17.jpg[170.18526]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_19.jpg[207.94382]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_20.jpg[148.89955]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_21.jpg[241.22357]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_22.jpg[126.6488]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_23.jpg[57.826885]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_25.jpg[181.37979]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_27.jpg[142.09122]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_29.jpg[199.66675]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_3.jpg[187.74426]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_31.jpg[199.4362]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_33.jpg[219.29561]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_35.jpg[97.71469]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_36.jpg[136.16296]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_37.jpg[181.87201]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_41.jpg[205.50058]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_42.jpg[144.4631]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_43.jpg[48.976852]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_45.jpg[188.33824]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_48.jpg[204.37138]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_49.jpg[221.45486]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_6.jpg[188.79846]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_7.jpg[152.42433]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_8.jpg[307.9208]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\jipiao_9.jpg[34.66021]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_0.jpg[122.893005]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_10.jpg[105.54697]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_11.jpg[312.89728]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_13.jpg[224.4545]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_14.jpg[144.01483]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_15.jpg[101.52374]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_17.jpg[270.8967]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_19.jpg[233.64957]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_2.jpg[209.51112]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_20.jpg[105.209366]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_22.jpg[191.63638]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_25.jpg[5.080705]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_26.jpg[217.82556]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_27.jpg[263.65884]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_29.jpg[140.52867]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_3.jpg[136.07884]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_32.jpg[321.13742]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_33.jpg[170.38803]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_36.jpg[180.30124]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_38.jpg[249.01953]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_39.jpg[315.1083]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_40.jpg[98.18397]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_41.jpg[140.94322]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_43.jpg[187.6973]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_44.jpg[143.48969]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_46.jpg[306.4824]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_5.jpg[43.96415]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_6.jpg[147.30516]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\menpiao_9.jpg[43.954998]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_0.jpg[271.06964]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_1.jpg[259.38495]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_10.jpg[247.37006]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_12.jpg[139.65744]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_14.jpg[254.1131]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_18.jpg[224.7216]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_2.jpg[254.33481]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_23.jpg[221.83022]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_24.jpg[285.72473]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_25.jpg[133.5053]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_27.jpg[173.06995]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_28.jpg[45.17545]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_29.jpg[98.77773]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_3.jpg[53.17187]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_31.jpg[106.9404]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_35.jpg[204.53162]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_36.jpg[219.3409]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_38.jpg[191.01695]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_4.jpg[94.01424]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_40.jpg[62.333298]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_41.jpg[188.42921]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_43.jpg[192.70644]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_45.jpg[264.4778]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_6.jpg[126.46128]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_8.jpg[133.71744]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\mingpian_9.jpg[221.41017]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\muji_5.jpg[282.63638]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\pingjibaogao_17.jpg[70.59741]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\pingjibaogao_19.jpg[144.19084]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\pingjibaogao_36.jpg[133.94739]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\pingjibaogao_8.jpg[129.00287]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_0.jpg[42.990585]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_1.jpg[58.14353]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_10.jpg[252.47131]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_12.jpg[47.902557]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_14.jpg[115.142]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_15.jpg[3.0771925]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_16.jpg[242.78142]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_17.jpg[67.654785]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_18.jpg[141.30751]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_19.jpg[53.051655]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_2.jpg[125.303925]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_20.jpg[100.94675]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_21.jpg[0.64805293]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_22.jpg[5.197938]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_24.jpg[58.433468]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_25.jpg[108.83621]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_26.jpg[53.192516]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_28.jpg[102.67785]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_29.jpg[297.6313]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_3.jpg[164.50139]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_30.jpg[177.26051]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_31.jpg[54.38746]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_32.jpg[124.08148]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_33.jpg[27.480036]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_36.jpg[174.26392]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_38.jpg[111.065605]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_39.jpg[174.06067]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_4.jpg[99.61842]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_40.jpg[64.745026]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_41.jpg[80.859184]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_42.jpg[105.87137]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_43.jpg[146.4427]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_44.jpg[165.3023]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_45.jpg[96.34494]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_46.jpg[104.48189]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_48.jpg[20.874844]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_49.jpg[202.90579]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_5.jpg[142.66216]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_6.jpg[38.51043]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_7.jpg[235.75864]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_8.jpg[116.06337]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shenfengzheng_9.jpg[87.968285]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shijuan_14.jpg[162.64526]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shijuan_19.jpg[102.23702]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shijuan_25.jpg[321.69916]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shijuan_29.jpg[187.80457]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shijuan_32.jpg[225.91257]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shijuan_41.jpg[340.9172]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shijuan_46.jpg[265.26175]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_0.jpg[156.85692]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_10.jpg[142.29213]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_11.jpg[228.83919]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_12.jpg[45.48196]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_13.jpg[122.9697]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_14.jpg[173.66217]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_16.jpg[199.34482]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_17.jpg[108.71872]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_19.jpg[34.197636]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_2.jpg[257.1678]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_21.jpg[232.80125]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_24.jpg[135.7013]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_25.jpg[112.228584]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_3.jpg[117.51143]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_31.jpg[25.431665]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_32.jpg[134.66193]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_33.jpg[81.30747]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_35.jpg[229.18704]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_36.jpg[122.951225]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_37.jpg[178.1584]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_7.jpg[33.676533]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_8.jpg[199.30354]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\shouju_9.jpg[120.08699]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\tijianbiao_11.jpg[55.133446]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\tijianbiao_14.jpg[21.6381]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\tijianbiao_15.jpg[143.79817]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\tijianbiao_18.jpg[124.51665]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\tijianbiao_20.jpg[164.70255]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\tijianbiao_22.jpg[51.004967]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\tijianbiao_3.jpg[166.73593]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\tijianbiao_32.jpg[226.9858]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\tijianbiao_33.jpg[98.30789]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\tijianbiao_37.jpg[80.21383]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\tijianbiao_41.jpg[310.48303]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\tijianbiao_43.jpg[90.47117]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\tijianbiao_46.jpg[124.886536]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\tijianbiao_47.jpg[273.50458]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\tijianbiao_6.jpeg[329.9355]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\tijianbiao_7.jpg[239.39359]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\tijianbiao_8.jpg[217.9202]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\tijianbiao_9.jpg[111.957054]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_0.jpg[239.15341]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_1.jpg[147.82948]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_10.jpg[231.75723]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_11.jpg[95.23111]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_13.jpg[90.75628]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_14.jpg[99.4494]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_15.jpg[190.63098]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_16.jpg[116.942764]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_17.jpg[99.385284]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_18.jpg[114.497696]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_19.jpg[36.26619]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_2.jpg[166.117]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_20.jpg[171.12224]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_21.jpg[108.581955]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_22.jpg[6.7913017]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_23.jpg[242.42247]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_24.jpg[61.746834]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_25.jpg[102.68002]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_26.jpg[61.460308]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_27.jpg[119.29367]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_28.jpg[98.49225]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_29.jpg[137.5391]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_3.jpg[169.92467]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_31.jpg[227.92421]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_32.jpg[262.95798]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_33.jpg[282.09973]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_34.jpg[279.3767]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_36.jpg[13.685155]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_37.jpg[132.68057]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_38.jpg[163.7524]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_39.jpg[196.90335]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_4.jpg[86.93054]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_41.jpg[275.41788]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_42.jpg[38.025692]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_44.jpg[144.79436]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_47.jpg[161.2504]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_48.jpg[237.90518]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_49.jpg[40.668262]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_7.jpg[133.09085]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yibao_huzhao_jiashizheng_8.jpg[184.52849]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_0.jpg[140.11163]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_1.jpg[144.4182]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_10.jpg[72.66313]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_13.jpg[230.04626]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_14.jpg[235.64655]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_15.jpg[191.78311]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_16.jpg[111.55798]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_18.jpg[250.75159]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_19.jpg[275.4278]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_2.jpg[236.27626]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_20.jpg[103.95924]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_22.jpg[33.95917]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_25.jpg[122.60679]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_27.jpg[322.17432]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_29.jpg[254.32047]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_3.jpg[165.25778]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_30.jpg[59.01539]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_32.jpg[115.094406]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_33.jpg[265.38303]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_34.jpg[154.89024]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_35.jpg[124.77308]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_36.jpg[215.79669]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_38.jpg[126.835915]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_40.jpg[180.8086]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_41.jpg[147.05602]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_42.jpg[222.20671]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_43.jpg[79.83839]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_44.jpg[310.37292]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_48.jpg[237.02829]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_7.jpg[199.17734]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_8.jpg[118.51303]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\yingyezhizhao_9.jpg[171.67705]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\zengzhishuifapiao_12.jpg[200.4433]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\zengzhishuifapiao_15.jpg[187.63872]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\zengzhishuifapiao_18.jpg[132.08131]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\zengzhishuifapiao_19.jpg[163.59201]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\zengzhishuifapiao_2.jpg[196.95052]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\zengzhishuifapiao_21.jpg[173.43872]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\zengzhishuifapiao_23.jpg[100.19347]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\zengzhishuifapiao_26.jpg[129.8492]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\zengzhishuifapiao_27.jpg[166.8423]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\zengzhishuifapiao_28.jpg[130.46219]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\zengzhishuifapiao_3.jpg[58.52298]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\zengzhishuifapiao_30.jpg[18.415802]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\zengzhishuifapiao_37.jpg[96.40582]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\zengzhishuifapiao_38.jpg[260.77737]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\zengzhishuifapiao_41.jpg[226.06024]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\zengzhishuifapiao_45.jpg[306.58426]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\zengzhishuifapiao_47.jpg[281.26663]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\zengzhishuifapiao_49.jpg[96.310715]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\zengzhishuifapiao_7.jpg[54.084633]', shape=(), dtype=string)
+tf.Tensor(b'G:\\054\\datasets\\test1\\test_image\\zengzhishuifapiao_9.jpg[160.23573]', shape=(), dtype=string)
+*****  chepiao  *****
+
+up total: 12***up error: 12***up acc: 0.0
+
+down total: 13***bt error: 12***bt acc: 0.07692307692307687
+
+left total: 11***left error: 11***left acc: 0.0
+
+right total: 14***right error: 12***right acc: 0.1428571428571429
+
+chepiao total acc: 0.06000000000000005
+
+******************************
+*****  chuzuchefapiao  *****
+
+up total: 8***up error: 7***up acc: 0.125
+
+down total: 18***bt error: 15***bt acc: 0.16666666666666663
+
+left total: 12***left error: 8***left acc: 0.33333333333333337
+
+right total: 12***right error: 8***right acc: 0.33333333333333337
+
+chuzuchefapiao total acc: 0.24
+
+******************************
+*****  dianzishu  *****
+
+up total: 11***up error: 3***up acc: 0.7272727272727273
+
+down total: 12***bt error: 2***bt acc: 0.8333333333333334
+
+left total: 16***left error: 5***left acc: 0.6875
+
+right total: 11***right error: 3***right acc: 0.7272727272727273
+
+dianzishu total acc: 0.74
+
+******************************
+*****  jiaocai  *****
+
+up total: 7***up error: 2***up acc: 0.7142857142857143
+
+down total: 13***bt error: 2***bt acc: 0.8461538461538461
+
+left total: 13***left error: 0***left acc: 1.0
+
+right total: 17***right error: 1***right acc: 0.9411764705882353
+
+jiaocai total acc: 0.9
+
+******************************
+*****  jipiao  *****
+
+up total: 15***up error: 12***up acc: 0.19999999999999996
+
+down total: 10***bt error: 4***bt acc: 0.6
+
+left total: 16***left error: 10***left acc: 0.375
+
+right total: 9***right error: 5***right acc: 0.4444444444444444
+
+jipiao total acc: 0.38
+
+******************************
+*****  menpiao  *****
+
+up total: 14***up error: 12***up acc: 0.1428571428571429
+
+down total: 11***bt error: 4***bt acc: 0.6363636363636364
+
+left total: 10***left error: 7***left acc: 0.30000000000000004
+
+right total: 15***right error: 6***right acc: 0.6
+
+menpiao total acc: 0.42000000000000004
+
+******************************
+*****  mingpian  *****
+
+up total: 9***up error: 8***up acc: 0.11111111111111116
+
+down total: 15***bt error: 5***bt acc: 0.6666666666666667
+
+left total: 11***left error: 4***left acc: 0.6363636363636364
+
+right total: 15***right error: 9***right acc: 0.4
+
+mingpian total acc: 0.48
+
+******************************
+*****  muji  *****
+
+up total: 11***up error: 1***up acc: 0.9090909090909091
+
+down total: 12***bt error: 0***bt acc: 1.0
+
+left total: 18***left error: 0***left acc: 1.0
+
+right total: 9***right error: 0***right acc: 1.0
+
+muji total acc: 0.98
+
+******************************
+*****  shenfengzheng  *****
+
+up total: 9***up error: 8***up acc: 0.11111111111111116
+
+down total: 12***bt error: 10***bt acc: 0.16666666666666663
+
+left total: 17***left error: 15***left acc: 0.11764705882352944
+
+right total: 12***right error: 9***right acc: 0.25
+
+shenfengzheng total acc: 0.16000000000000003
+
+******************************
+*****  shijuan  *****
+
+up total: 9***up error: 1***up acc: 0.8888888888888888
+
+down total: 13***bt error: 2***bt acc: 0.8461538461538461
+
+left total: 17***left error: 3***left acc: 0.8235294117647058
+
+right total: 11***right error: 1***right acc: 0.9090909090909091
+
+shijuan total acc: 0.86
+
+******************************
+*****  shouju  *****
+
+up total: 9***up error: 7***up acc: 0.2222222222222222
+
+down total: 18***bt error: 3***bt acc: 0.8333333333333334
+
+left total: 14***left error: 9***left acc: 0.3571428571428571
+
+right total: 9***right error: 4***right acc: 0.5555555555555556
+
+shouju total acc: 0.54
+
+******************************
+*****  tijianbiao  *****
+
+up total: 12***up error: 4***up acc: 0.6666666666666667
+
+down total: 13***bt error: 7***bt acc: 0.46153846153846156
+
+left total: 14***left error: 5***left acc: 0.6428571428571428
+
+right total: 11***right error: 2***right acc: 0.8181818181818181
+
+tijianbiao total acc: 0.64
+
+******************************
+*****  jiashizheng  *****
+
+up total: 10***up error: 9***up acc: 0.09999999999999998
+
+down total: 19***bt error: 14***bt acc: 0.26315789473684215
+
+left total: 14***left error: 13***left acc: 0.0714285714285714
+
+right total: 7***right error: 4***right acc: 0.4285714285714286
+
+jiashizheng total acc: 0.19999999999999996
+
+******************************
+*****  yingyezhizhao  *****
+
+up total: 11***up error: 8***up acc: 0.2727272727272727
+
+down total: 9***bt error: 6***bt acc: 0.33333333333333337
+
+left total: 17***left error: 12***left acc: 0.2941176470588235
+
+right total: 13***right error: 6***right acc: 0.5384615384615384
+
+yingyezhizhao total acc: 0.36
+
+******************************
+*****  yinhangliushui  *****
+
+up total: 10***up error: 0***up acc: 1.0
+
+down total: 18***bt error: 0***bt acc: 1.0
+
+left total: 10***left error: 0***left acc: 1.0
+
+right total: 12***right error: 0***right acc: 1.0
+
+yinhangliushui total acc: 1.0
+
+******************************
+*****  zengzhishuifapiao  *****
+
+up total: 8***up error: 3***up acc: 0.625
+
+down total: 21***bt error: 5***bt acc: 0.7619047619047619
+
+left total: 7***left error: 4***left acc: 0.4285714285714286
+
+right total: 14***right error: 8***right acc: 0.4285714285714286
+
+zengzhishuifapiao total acc: 0.6
+
+******************************
+*****  pingjibaogao  *****
+
+up total: 19***up error: 2***up acc: 0.8947368421052632
+
+down total: 8***bt error: 0***bt acc: 1.0
+
+left total: 10***left error: 0***left acc: 1.0
+
+right total: 13***right error: 2***right acc: 0.8461538461538461
+
+pingjibaogao total acc: 0.92
+
+******************************
+*****  gongsibaobiao  *****
+
+up total: 13***up error: 1***up acc: 0.9230769230769231
+
+down total: 14***bt error: 0***bt acc: 1.0
+
+left total: 11***left error: 0***left acc: 1.0
+
+right total: 12***right error: 1***right acc: 0.9166666666666666
+
+gongsibaobiao total acc: 0.96
+
+******************************
+***** 票据 *****
+
+up total: 66***up error: 53***up acc: 0.19696969696969702
+
+down total: 91***down error: 43***down acc: 0.5274725274725275
+
+left total: 70***left error: 49***left acc: 0.30000000000000004
+
+right total: 73***right error: 43***right acc: 0.410958904109589
+
+total acc: 0.3733333333333333
+
+******************************
+***** 证件 *****
+
+up total: 39***up error: 33***up acc: 0.15384615384615385
+
+down total: 55***down error: 35***down acc: 0.36363636363636365
+
+left total: 59***left error: 44***left acc: 0.2542372881355932
+
+right total: 47***right error: 28***right acc: 0.4042553191489362
+
+total acc: 0.30000000000000004
+
+******************************
+***** 文档 *****
+
+up total: 71***up error: 9***up acc: 0.8732394366197183
+
+down total: 77***down error: 4***down acc: 0.948051948051948
+
+left total: 78***left error: 5***left acc: 0.9358974358974359
+
+right total: 74***right error: 7***right acc: 0.9054054054054054
+
+total acc: 0.9166666666666666
+
+******************************
+***** 其他 *****
+
+up total: 21***up error: 5***up acc: 0.7619047619047619
+
+down total: 26***down error: 9***down acc: 0.6538461538461539
+
+left total: 31***left error: 8***left acc: 0.7419354838709677
+
+right total: 22***right error: 3***right acc: 0.8636363636363636
+
+total acc: 0.75
+
+******************************
+up total acc: 0.4923857868020305
+
+down total acc: 0.6345381526104418
+
+left total acc: 0.5546218487394958
+
+right total acc: 0.625
+
+##############################
+correct:522/900
+acc:  0.58
+pre_time:  0.5029932427406311
+
+Process finished with exit code 0
