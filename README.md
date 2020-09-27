@@ -13,6 +13,11 @@
 - [Content Description](https://github.com/Noba1anc3/Direction_Classify/blob/master/Text%20Detection%20Based/README.md)
 - [Appendix](https://github.com/Noba1anc3/Direction_Classify/blob/master/Text%20Detection%20Based/Appendix.md)
 
+### ChineseOCR_Lite based Direction Classification
+
+- [Performance on Testing Set](https://github.com/Noba1anc3/Direction_Classify/blob/master/chineseocr_lite/README.md)
+
 ### PaddleOCR based Direction Classification
 
 - [Performance on Testing Set](https://github.com/Noba1anc3/Direction_Classify/blob/master/PaddleOCR/README.md)
+
