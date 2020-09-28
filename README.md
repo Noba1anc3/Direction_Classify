@@ -18,6 +18,7 @@
 ### ChineseOCR_Lite
 
 - [Performance on Testing Set](https://github.com/Noba1anc3/Direction_Classify/blob/master/chineseocr_lite/README.md)
+- [Performance on Testing Set 2.0](https://github.com/Noba1anc3/Direction_Classify/blob/master/chineseocr_lite/Test%20Set%202.0.md)
 
 ### PaddleOCR
 
@@ -26,5 +27,7 @@
 
 ### Comparison & Analysis
 
-- [Comparison](https://github.com/Noba1anc3/Direction_Classify/blob/master/Comparison.md)
-- [Result Analysis](https://github.com/Noba1anc3/Direction_Classify/blob/master/Result_Analysis.md)
+- [Comparison on Testing Set](https://github.com/Noba1anc3/Direction_Classify/blob/master/Comparison.md)
+- [Comparison on Testing Set 2.0](https://github.com/Noba1anc3/Direction_Classify/blob/master/Comparison%202.0.md)
+- [Result Analysis on Testing Set](https://github.com/Noba1anc3/Direction_Classify/blob/master/Result_Analysis.md)
+- [Result Analysis on Testing Set 2.0](https://github.com/Noba1anc3/Direction_Classify/blob/master/Result_Analysis%202.0.md)
