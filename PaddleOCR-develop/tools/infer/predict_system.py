@@ -42,6 +42,10 @@ class TextSystem(object):
             self.text_classifier = predict_cls.TextClassifier(args)
 
     def cal_ver_hor_edge(self, dt_box):
+        """
+        :param dt_box: a list of four points
+        :return: the vertical and horizonal edge length of the dt_box
+        """
         if dt_box[1][0] - dt_box[0][0] == 0:
             line_up = 90
         else:
@@ -96,8 +100,7 @@ class TextSystem(object):
         """
 
         vertical_edge, horizonal_edge = self.cal_ver_hor_edge(dt_box)
-        vertical_edge = int(vertical_edge)
-        horizonal_edge = int(horizonal_edge)
+
         img_crop_width = int(
             max(
                 np.linalg.norm(dt_box[0] - dt_box[1]),
@@ -106,12 +109,6 @@ class TextSystem(object):
             max(
                 np.linalg.norm(dt_box[0] - dt_box[3]),
                 np.linalg.norm(dt_box[1] - dt_box[2])))
-
-        status = 0
-        if img_crop_height / img_crop_width < 1 and vertical_edge / horizonal_edge > 1:
-            status = 1
-        elif img_crop_height / img_crop_width > 1 and vertical_edge / horizonal_edge < 1:
-            status = 1
 
         pts_std = np.float32([[0, 0], [img_crop_width, 0],
                               [img_crop_width, img_crop_height],
@@ -126,22 +123,19 @@ class TextSystem(object):
         dst_img_height, dst_img_width = dst_img.shape[0:2]
         if dst_img_height * 1.0 / dst_img_width >= 1.5:
             dst_img = np.rot90(dst_img)
-        
-        wh_ratio = False
-        dst_img_height, dst_img_width = dst_img.shape[0:2]
-        if dst_img_width *1.0 / dst_img_height > 2:
-            wh_ratio = True
 
-        if status:
-            if wh_ratio:
-                return dst_img, True, True
-            else:
-                return dst_img, True, False
-        else:
-            if wh_ratio:
-                return dst_img, False, True
-            else:
-                return dst_img, False, False
+        Wrong_Perspective = False
+        if img_crop_height / img_crop_width < 1 and vertical_edge / horizonal_edge > 1:
+            Wrong_Perspective = True
+        elif img_crop_height / img_crop_width > 1 and vertical_edge / horizonal_edge < 1:
+            Wrong_Perspective = True
+
+        WH_Ratio = False
+        dst_img_height, dst_img_width = dst_img.shape[0:2]
+        if dst_img_width * 1.0 / dst_img_height > 2:
+            WH_Ratio = True
+
+        return dst_img, Wrong_Perspective, WH_Ratio
 
     def print_draw_crop_rec_res(self, img_crop_list, rec_res):
         bbox_num = len(img_crop_list)
@@ -152,15 +146,15 @@ class TextSystem(object):
     def __call__(self, img):
         ori_im = img.copy()
         dt_boxes, elapse = self.text_detector(img)
+
         with open('result.txt', 'a+') as f:
-            f.write(' ' + '%.2f' % (elapse*1000))
+            f.write(' ' + '%.2f' % (elapse * 1000))
         print("dt_boxes num : {}, elapse : {}ms"
-        .format(len(dt_boxes), '%.2f' % (elapse*1000)))
-  
+              .format(len(dt_boxes), '%.2f' % (elapse * 1000)))
+
         mid_time = time.time()
 
         left_right = up_down = 0
-
         for dt_box in dt_boxes:
             vertical_edge, horizonal_edge = self.cal_ver_hor_edge(dt_box)
 
@@ -168,18 +162,17 @@ class TextSystem(object):
                 left_right += vertical_edge / horizonal_edge
             else:
                 up_down += horizonal_edge / vertical_edge
-
-        print('上下 :', up_down, '左右 :', left_right)
+        print('上下型分数 :', up_down, '左右型分数 :', left_right)
 
         if dt_boxes is None:
             return None, None
         dt_boxes = sorted_boxes(dt_boxes)
         for i, dt_box in enumerate(dt_boxes):
             vertical_edge, horizonal_edge = self.cal_ver_hor_edge(dt_box)
-            if up_down > left_right and vertical_edge/horizonal_edge > 1:
+            if up_down > left_right and vertical_edge / horizonal_edge > 1:
                 del dt_boxes[i]
                 print('过滤宽高比不一致的检测框')
-            elif up_down <= left_right and vertical_edge/horizonal_edge < 1:
+            elif up_down <= left_right and vertical_edge / horizonal_edge < 1:
                 del dt_boxes[i]
                 print('过滤宽高比不一致的检测框')
 
@@ -187,33 +180,33 @@ class TextSystem(object):
         img_crop_list = []
         for bno in range(len(dt_boxes)):
             tmp_box = copy.deepcopy(dt_boxes[bno])
-            img_crop, status, wh_ratio = self.get_rotate_crop_image(ori_im, tmp_box)
+            img_crop, wrong_perspective, wh_ratio = self.get_rotate_crop_image(ori_im, tmp_box)
             if wh_ratio:
                 img_crop_list.append(img_crop)
-                if status:
+                if wrong_perspective:
                     count += 1
 
         with open('result.txt', 'a+') as f:
             f.write(' ' + '%.2f' % ((time.time() - mid_time) * 1000))
         print("cls num : {}, elapse : {}ms".format(
-            len(img_crop_list), '%.2f' % ((time.time() - mid_time)*1000)))
+            len(img_crop_list), '%.2f' % ((time.time() - mid_time) * 1000)))
 
         if len(dt_boxes) == 0:
             with open('result.txt', 'a+') as f:
                 f.write(' 0')
         else:
-            print('错误仿射变换占比:', '%.2f' % (count*100 / len(dt_boxes)))
+            print('错误透视变换占比:', '%.2f' % (count * 100 / len(dt_boxes)))
             with open('result.txt', 'a+') as f:
-                f.write(' ' + '%.2f' % (count*100 / len(dt_boxes)))
+                f.write(' ' + '%.2f' % (count * 100 / len(dt_boxes)))
 
         if self.use_angle_cls:
             img_crop_list, angle_list, elapse, lr = self.text_classifier(
-                img_crop_list)
+                img_crop_list[:3])
 
             with open('result.txt', 'a+') as f:
                 f.write(' ' + '%.2f' % (elapse * 1000))
             print("cls num : {}, elapse : {}ms".format(
-                len(img_crop_list), '%.2f' % (elapse*1000)))
+                len(img_crop_list), '%.2f' % (elapse * 1000)))
 
             with open('result.txt', 'a+') as f:
                 if left_right >= up_down and lr == 1:
@@ -273,4 +266,3 @@ def main(args):
 
 if __name__ == "__main__":
     main(utility.parse_args())
-
