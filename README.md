@@ -2,9 +2,9 @@
 
 ## Making of Testing Set 
 
-[Testing Set](https://github.com/Noba1anc3/Direction_Classify/blob/master/Tesing%20Set.md)
-[Download Testing Set 1.0 @ 18*50](https://bhpan.buaa.edu.cn:443/link/787CCE6F804CBC0F52251D87A79DCD91)
-[Download Testing Set 2.0 @ 18*200](https://bhpan.buaa.edu.cn:443/link/7EFF874581A29BAE85822C1D11A9E0A2)
+- [Testing Set](https://github.com/Noba1anc3/Direction_Classify/blob/master/Tesing%20Set.md)
+- [Download Testing Set 1.0 @ 18*50](https://bhpan.buaa.edu.cn:443/link/787CCE6F804CBC0F52251D87A79DCD91)
+- [Download Testing Set 2.0 @ 18*200](https://bhpan.buaa.edu.cn:443/link/7EFF874581A29BAE85822C1D11A9E0A2)
 
 ## Zhenyang's Model
 
