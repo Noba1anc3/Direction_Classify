@@ -17,6 +17,32 @@
 
 ## OCR Engine Based Direction Classification
 
+```
+chepiao_147.jpg
+Image Rotation
+   Elapsed : 9.19ms
+Text Detection
+   Boxes Num : 18
+   Elapsed : 192.46ms
+UD - LR
+   UD Score : 1.44 
+   LR Score : 97.05
+Intermidiate Filter
+   Filter Reversed WH-Ratio Boxes
+   Filter Low WH-Ratio Boxes
+   Filter Low WH-Ratio Boxes
+   Filter Low WH-Ratio Boxes
+   Remained Boxes Num : 14
+   Elapsed : 5.23ms
+Direction Classification
+   Positive Score : 0.00 
+   Negative Score : 9.99 
+   Positive Percentage : 0.00% 
+   Negative Percentage : 100.00%
+   Used Boxes Num : 10
+   Elapsed : 73.66ms
+Final Direction : Left
+```
 ### ChineseOCR_Lite
 
 - [Performance on Testing Set](https://github.com/Noba1anc3/Direction_Classify/blob/master/chineseocr_lite/README.md)

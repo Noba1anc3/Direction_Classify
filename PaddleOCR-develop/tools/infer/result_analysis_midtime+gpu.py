@@ -41,8 +41,8 @@ f.close()
 with open('./result.txt', 'r') as f:
     lines = f.readlines()
     for line in lines:
-           preds.append([line.split(' ')[0], line.split(' ')[5].split('\n')[0], 
-           line.split(' ')[1], line.split(' ')[2], line.split(' ')[4]])
+           preds.append([line.split(' ')[0], line.split(' ')[6].split('\n')[0],
+           line.split(' ')[2], line.split(' ')[3], line.split(' ')[5]])
 f.close()
 
 

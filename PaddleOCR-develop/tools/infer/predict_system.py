@@ -25,6 +25,7 @@ from ppocr.utils.utility import initial_logger
 
 logger = initial_logger()
 import cv2
+from tools.infer.correct import angle_correction
 import tools.infer.predict_det as predict_det
 import tools.infer.predict_cls as predict_cls
 import copy
@@ -36,7 +37,6 @@ from ppocr.utils.utility import get_image_file_list, check_and_read_gif
 class TextSystem(object):
     def __init__(self, args):
         self.text_detector = predict_det.TextDetector(args)
-        # self.text_recognizer = predict_rec.TextRecognizer(args)
         self.use_angle_cls = args.use_angle_cls
         if self.use_angle_cls:
             self.text_classifier = predict_cls.TextClassifier(args)
@@ -137,19 +137,22 @@ class TextSystem(object):
 
         return dst_img, Wrong_Perspective, WH_Ratio
 
-    def print_draw_crop_rec_res(self, img_crop_list, rec_res):
-        bbox_num = len(img_crop_list)
-        for bno in range(bbox_num):
-            cv2.imwrite("./output/img_crop_%d.jpg" % bno, img_crop_list[bno])
-            print(bno, rec_res[bno])
-
     def __call__(self, img):
+        print("Image Rotation")
+        img, elapse = angle_correction(img)
+        with open('result.txt', 'a+') as f:
+            f.write(' ' + '%.2f' % (elapse * 1000))
+
+        print("   Elapsed : {}ms"
+              .format('%.2f' % (elapse * 1000)))
         ori_im = img.copy()
+
+        print("Text Detection")
         dt_boxes, elapse = self.text_detector(img)
 
         with open('result.txt', 'a+') as f:
             f.write(' ' + '%.2f' % (elapse * 1000))
-        print("dt_boxes num : {}, elapse : {}ms"
+        print("   Boxes Num : {}\n   Elapsed : {}ms"
               .format(len(dt_boxes), '%.2f' % (elapse * 1000)))
 
         mid_time = time.time()
@@ -162,67 +165,62 @@ class TextSystem(object):
                 left_right += vertical_edge / horizonal_edge
             else:
                 up_down += horizonal_edge / vertical_edge
-        print('上下型分数 :', up_down, '左右型分数 :', left_right)
+        print('UD - LR\n   UD Score :', '%.2f' % up_down, '\n   LR Score :', '%.2f' % left_right)
 
+        print('Intermidiate Filter')
         if dt_boxes is None:
-            return None, None
+            return 0
         dt_boxes = sorted_boxes(dt_boxes)
         for i, dt_box in enumerate(dt_boxes):
             vertical_edge, horizonal_edge = self.cal_ver_hor_edge(dt_box)
             if up_down > left_right and vertical_edge / horizonal_edge > 1:
                 del dt_boxes[i]
-                print('过滤宽高比不一致的检测框')
+                print('   Filter Reversed WH-Ratio Boxes')
             elif up_down <= left_right and vertical_edge / horizonal_edge < 1:
                 del dt_boxes[i]
-                print('过滤宽高比不一致的检测框')
+                print('   Filter Reversed WH-Ratio Boxes')
 
-        count = 0
         img_crop_list = []
         for bno in range(len(dt_boxes)):
             tmp_box = copy.deepcopy(dt_boxes[bno])
             img_crop, wrong_perspective, wh_ratio = self.get_rotate_crop_image(ori_im, tmp_box)
             if wh_ratio:
                 img_crop_list.append(img_crop)
-                if wrong_perspective:
-                    count += 1
+            else:
+                print('   Filter Low WH-Ratio Boxes')
 
         with open('result.txt', 'a+') as f:
             f.write(' ' + '%.2f' % ((time.time() - mid_time) * 1000))
-        print("cls num : {}, elapse : {}ms".format(
+        print("   Remained Boxes Num : {}\n   Elapsed : {}ms".format(
             len(img_crop_list), '%.2f' % ((time.time() - mid_time) * 1000)))
 
-        if len(dt_boxes) == 0:
-            with open('result.txt', 'a+') as f:
-                f.write(' 0')
-        else:
-            print('错误透视变换占比:', '%.2f' % (count * 100 / len(dt_boxes)))
-            with open('result.txt', 'a+') as f:
-                f.write(' ' + '%.2f' % (count * 100 / len(dt_boxes)))
-
+        print('Direction Classification')
         if self.use_angle_cls:
             img_crop_list, angle_list, elapse, lr = self.text_classifier(
-                img_crop_list[:3])
+                img_crop_list[:10])
 
             with open('result.txt', 'a+') as f:
                 f.write(' ' + '%.2f' % (elapse * 1000))
-            print("cls num : {}, elapse : {}ms".format(
+            print("   Used Boxes Num : {}\n   Elapsed : {}ms".format(
                 len(img_crop_list), '%.2f' % (elapse * 1000)))
 
             with open('result.txt', 'a+') as f:
                 if left_right >= up_down and lr == 1:
-                    print('右\n')
+                    print('Final Direction : Right\n')
                     f.write(' ' + str(3) + '\n')
+                    return 3
                 elif left_right >= up_down and lr == 0:
-                    print('左\n')
+                    print('Final Direction : Left\n')
                     f.write(' ' + str(1) + '\n')
+                    return 1
                 elif left_right < up_down and lr == 1:
-                    print('上\n')
+                    print('Final Direction : Up\n')
                     f.write(' ' + str(0) + '\n')
+                    return 0
                 elif left_right < up_down and lr == 0:
-                    print('下\n')
+                    print('Final Direction : Down\n')
                     f.write(' ' + str(2) + '\n')
-
-        return dt_boxes, 1
+                    return 2
 
 
 def sorted_boxes(dt_boxes):
@@ -252,8 +250,8 @@ def main(args):
     for image_file in sorted(image_file_list):
 
         with open('result.txt', 'a+') as f:
-            f.write(image_file.split('noangle/')[1])
-        print(image_file.split('noangle/')[1])
+            f.write(image_file.split('images/')[1])
+        print(image_file.split('images/')[1])
 
         img, flag = check_and_read_gif(image_file)
         if not flag:

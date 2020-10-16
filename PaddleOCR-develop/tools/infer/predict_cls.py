@@ -124,16 +124,17 @@ class TextClassifier(object):
                 print('正', img_num,
                       '%.2f' % pos, '%.2f' % neg)
             else:
-                print('正', img_num,
-                      '%.2f' % (pos*100 / (pos + neg)) + '%',
-                      '%.2f' % (neg*100 / (pos + neg)) + '%',
-                      '%.2f' % pos, '%.2f' % neg)
+                print('   Positive Score : %.2f' % pos,
+                      '\n   Negative Score : %.2f' % neg,
+                      '\n   Positive Percentage : %.2f' % (pos*100 / (pos + neg)) + '%',
+                      '\n   Negative Percentage : %.2f' % (neg*100 / (pos + neg)) + '%')
+
             return img_list, cls_res, predict_time, 1
         else:
-            print('反', img_num,
-                  '%.2f' % (pos*100 / (pos + neg)) + '%',
-                  '%.2f' % (neg*100 / (pos + neg)) + '%',
-                  '%.2f' % pos, '%.2f' % neg)
+            print('   Positive Score : %.2f' % pos,
+                  '\n   Negative Score : %.2f' % neg,
+                  '\n   Positive Percentage : %.2f' % (pos * 100 / (pos + neg)) + '%',
+                  '\n   Negative Percentage : %.2f' % (neg * 100 / (pos + neg)) + '%')
             return img_list, cls_res, predict_time, 0
 
 
