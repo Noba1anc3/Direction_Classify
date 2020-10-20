@@ -43,7 +43,7 @@ python predict_system.py
 - `mobile_det + mobile_cls` : 99.53%
 
 组合替换方法 : 
-1. 下载(`mobile_server`)[https://paddleocr.bj.bcebos.com/20-09-22/server/det/ch_ppocr_server_v1.1_det_infer.tar]
+1. 下载[`mobile_server`](https://paddleocr.bj.bcebos.com/20-09-22/server/det/ch_ppocr_server_v1.1_det_infer.tar)
 2. 将模型放在项目目录`inference`文件夹之下
 3. 修改类初始化参数`DET_MODEL_DIR`为`'../../inference/ch_ppocr_server_v1.1_det_infer/'`
 
