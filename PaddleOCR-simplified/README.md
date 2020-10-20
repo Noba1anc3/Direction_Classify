@@ -11,24 +11,24 @@ python predict_system.py
 
 ## 接口
 
-- 接口类 : tools/infer/predict_system.py -> TextSystem
-- 初始化类 : `text_sys = TextSystem(utility.parse_args(), DET_MODEL_DIR, CLS_MODEL_DIR, GPU)`
-  - 默认`DET_MODEL_DIR`=`'../../inference/ch_ppocr_mobile_v1.1_det_infer/'`
-  - 默认`CLS_MODEL_DIR`=`'../../inference/ch_ppocr_mobile_v1.1_cls_infer/'`
-  - 默认GPU = `True`
-- 推理图片 : `text_sys(image, cls_box_num)`
-  - 输入 : 
+- Interface Class : tools/infer/predict_system.py -> TextSystem
+- Init : `text_sys = TextSystem(utility.parse_args(), DET_MODEL_DIR, CLS_MODEL_DIR, GPU)`
+  - `DET_MODEL_DIR: '../../inference/ch_ppocr_mobile_v1.1_det_infer/'` (default)
+  - `CLS_MODEL_DIR: '../../inference/ch_ppocr_mobile_v1.1_cls_infer/'` (default)
+  - `GPU: True` (default)
+- Run : `text_sys(image, cls_box_num)`
+  - Input : 
     - image : numpy.ndarray ( w * h * 3)
     - cls_box_num : 用于分类的文字框数量 (default = 10)
-  - 输出 : 文档方向
+  - Output : 文档方向
     - 0 : 上向 (文字阅读方向为自左向右)
     - 1 : 左向 (文字阅读方向为自下向上)
     - 2 : 下向 (文字阅读方向为自右向左)
     - 3 : 右向 (文字阅读方向为自上向下)
 
-## 推荐配置
+## Recommended
 
-### GPU环境
+### GPU Environment
 
 #### model
 
@@ -50,26 +50,33 @@ python predict_system.py
 #### cls_box_num
 
 以最低时间成本达到99%以上的总准确率
-- 推荐将`cls_box_num`修改为`5`，在该配置下分类任务的平均耗时不足10ms，最高耗时不足15ms
+- 推荐将`cls_box_num`配置为`5`
+  - 分类任务的平均耗时不足10ms
+  - 分类任务的最高耗时不足15ms
 
 对耗时基本没有要求
-- 推荐将`cls_box_num`修改为`20`，该配置将分类任务的最高耗时控制在50ms以内，总准确率为99.53%
+- 推荐将`cls_box_num`配置为`20`
+  - 分类任务的最高耗时不足50ms
+  - 总准确率为99.53%
 
 对时间消耗的要求介于两者之间
-- 推荐使用默认配置，该配置下的分类任务平均时间不足20ms，总任务平均时间不足100ms，准确率为99.42%
+- 推荐使用默认配置
+  - 分类任务的平均耗时不足20ms
+  - 总任务的平均耗时不足100ms
+  - 总准确率为99.42%
 
-### CPU环境
+### CPU Environment
 
 #### model
 
-在CPU环境上推荐使用当前`mobile_det + mobile_cls`的配置
+在CPU环境上推荐使用当前`mobile_det + mobile_cls`的默认配置
 
 #### cls_box_num
 
 - cls_det_num = 10
-  - 分类任务准确率损失0.14%，总准确率: 99.39%
   - 分类任务的平均耗时降低2/3至110ms
   - 总任务的平均耗时降低1/3至558ms
+  - 总准确率: 99.39%
 
 - cls_det_num = 5
   - 分类任务平均耗时: 55ms
