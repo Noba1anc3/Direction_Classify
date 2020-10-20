@@ -9,22 +9,22 @@ cd tools/infer
 python predict_system.py
 ```
 
-## 接口
+## Interface
 
 - Interface Class : tools/infer/predict_system.py -> TextSystem
-- Init : `text_sys = TextSystem(utility.parse_args(), DET_MODEL_DIR, CLS_MODEL_DIR, GPU)`
+- `__init__` : `text_sys = TextSystem(utility.parse_args(), DET_MODEL_DIR, CLS_MODEL_DIR, GPU)`
   - `DET_MODEL_DIR: '../../inference/ch_ppocr_mobile_v1.1_det_infer/'` (default)
   - `CLS_MODEL_DIR: '../../inference/ch_ppocr_mobile_v1.1_cls_infer/'` (default)
   - `GPU: True` (default)
-- Run : `text_sys(image, cls_box_num)`
+- `__call__` : `text_sys(image, cls_box_num)`
   - Input : 
-    - image : numpy.ndarray ( w * h * 3)
-    - cls_box_num : 用于分类的文字框数量 (default = 10)
+    - `image` : numpy.ndarray ( w * h * 3)
+    - `cls_box_num` : 用于分类的文字框数量 (default = 10)
   - Output : 文档方向
-    - 0 : 上向 (文字阅读方向为自左向右)
-    - 1 : 左向 (文字阅读方向为自下向上)
-    - 2 : 下向 (文字阅读方向为自右向左)
-    - 3 : 右向 (文字阅读方向为自上向下)
+    - `0` : 上向 (文字阅读方向为自左向右)
+    - `1` : 左向 (文字阅读方向为自下向上)
+    - `2` : 下向 (文字阅读方向为自右向左)
+    - `3` : 右向 (文字阅读方向为自上向下)
 
 ## Recommended
 
