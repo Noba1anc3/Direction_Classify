@@ -34,36 +34,33 @@ python predict_system.py
 
 在GPU环境上推荐使用`mobile_server + mobile_cls`的配置
 
-完整流程的平均时间对比: 
+总任务平均耗时
 - `mobile_server + mobile_cls` : 74.34ms
 - `mobile_det + mobile_cls` : 65.54ms
 
-测试集上的总准确率对比:
+总准确率
 - `mobile_server + mobile_cls` : 99.67%
 - `mobile_det + mobile_cls` : 99.53%
 
 组合替换方法 : 
 1. 下载[`mobile_server`](https://paddleocr.bj.bcebos.com/20-09-22/server/det/ch_ppocr_server_v1.1_det_infer.tar)
-2. 将模型放在项目目录`inference`文件夹之下
+2. 将模型放在根目录下的`inference`文件夹内
 3. 修改类初始化参数`DET_MODEL_DIR`为`'../../inference/ch_ppocr_server_v1.1_det_infer/'`
 
 #### cls_box_num
 
-以最低时间成本达到99%以上的总准确率
-- 推荐将`cls_box_num`配置为`5`
-  - 分类任务的平均耗时不足10ms
-  - 分类任务的最高耗时不足15ms
+以最低时间成本达到99%以上的总准确率: 推荐将`cls_box_num`配置为`5`
+- 分类任务的平均耗时不足10ms
+- 分类任务的最高耗时不足15ms
 
-对耗时基本没有要求
-- 推荐将`cls_box_num`配置为`20`
-  - 分类任务的最高耗时不足50ms
-  - 总准确率为99.53%
+对耗时基本没有要求: 推荐将`cls_box_num`配置为`20`
+- 分类任务的最高耗时不足50ms
+- 总准确率为99.53%
 
-对时间消耗的要求介于两者之间
-- 推荐使用默认配置
-  - 分类任务的平均耗时不足20ms
-  - 总任务的平均耗时不足100ms
-  - 总准确率为99.42%
+对时间消耗的要求介于两者之间: 推荐使用默认配置
+- 分类任务的平均耗时不足20ms
+- 总任务的平均耗时不足100ms
+- 总准确率为99.42%
 
 ### CPU Environment
 
