@@ -22,7 +22,16 @@ sys.path.append(os.path.abspath(os.path.join(__dir__, '../..')))
 
 
 class TextSystem(object):
-    def __init__(self, args):
+    def __init__(self,
+                 args,
+                 DET_MODEL_DIR='../../inference/ch_ppocr_mobile_v1.1_det_infer/',
+                 CLS_MODEL_DIR='../../inference/ch_ppocr_mobile_v1.1_cls_infer/',
+                 GPU=True):
+
+        args.use_gpu = GPU
+        args.det_model_dir = DET_MODEL_DIR
+        args.cls_model_dir = CLS_MODEL_DIR
+
         self.text_detector = predict_det.TextDetector(args)
         self.text_classifier = predict_cls.TextClassifier(args)
 
@@ -124,7 +133,7 @@ class TextSystem(object):
 
         return dst_img, Wrong_Perspective, WH_Ratio
 
-    def __call__(self, img):
+    def __call__(self, img, cls_box_num=10):
         print("Image Rotation")
         img, elapse = angle_correction(img)
         # with open('result.txt', 'a+') as f:
@@ -183,7 +192,7 @@ class TextSystem(object):
 
         print('Direction Classification')
         img_crop_list, angle_list, elapse, lr = self.text_classifier(
-            img_crop_list[:10])
+            img_crop_list[:cls_box_num])
 
         # with open('result.txt', 'a+') as f:
         #     f.write(' ' + '%.2f' % (elapse * 1000))
@@ -230,11 +239,11 @@ def sorted_boxes(dt_boxes):
     return _boxes
 
 
-def main(args):
+def main():
     image_file_list = get_image_file_list("../../images/")
-    text_sys = TextSystem(args)
-    for image_file in sorted(image_file_list):
+    text_sys = TextSystem(utility.parse_args(), GPU=False)
 
+    for image_file in sorted(image_file_list):
         # with open('result.txt', 'a+') as f:
         #     f.write(image_file.split('images/')[1])
         print(image_file.split('images/')[1])
@@ -245,10 +254,9 @@ def main(args):
         if img is None:
             logger.info("error in loading image:{}".format(image_file))
             continue
-        # numpy.ndarray
-        # W x H x 3
+
         text_sys(img)
 
 
 if __name__ == "__main__":
-    main(utility.parse_args())
+    main()
