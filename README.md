@@ -17,6 +17,20 @@
 
 ## Differentiable Binarization Text Detection Based Ultra-lightweight Document Direction Rectifization Algorithm
 
+![](https://i.postimg.cc/vT3nwzn9/1.png)
+
+Differentiable Binarization based Text Detection
+
+![](https://i.postimg.cc/13LqS48W/2.png)
+
+Backbone
+
+![](https://i.postimg.cc/zXGWSsmk/3.png)
+
+FPGM Pruning
+
+![](https://i.postimg.cc/MpcQg1pM/4.png)
+
 ```
 chepiao_147.jpg
 Image Rotation
