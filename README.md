@@ -15,7 +15,7 @@
 - [**Content Description**](https://github.com/Noba1anc3/Direction_Classify/blob/master/Text%20Detection%20Based/README.md)
 - [Appendix](https://github.com/Noba1anc3/Direction_Classify/blob/master/Text%20Detection%20Based/Appendix.md)
 
-## OCR Engine Based Direction Classification
+## Differentiable Binarization Text Detection Based Ultra-lightweight Document Direction Rectifization Algorithm
 
 ```
 chepiao_147.jpg
@@ -48,7 +48,7 @@ Final Direction : Left
 - [Performance on Testing Set](https://github.com/Noba1anc3/Direction_Classify/blob/master/chineseocr_lite/README.md)
 - [Performance on Testing Set 2.0](https://github.com/Noba1anc3/Direction_Classify/blob/master/chineseocr_lite/Test%20Set%202.0.md)
 
-### PaddleOCR
+### Differentiable Binarization
 
 - [Performance on Testing Set](https://github.com/Noba1anc3/Direction_Classify/blob/master/PaddleOCR/README.md)
 - [Performance on Testing Set 2.0](https://github.com/Noba1anc3/Direction_Classify/blob/master/PaddleOCR/Test%20Set%202.0.md)
