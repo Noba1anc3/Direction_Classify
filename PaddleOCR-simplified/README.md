@@ -33,7 +33,7 @@ python predict_system.py
 ## Architecture
 
 ```
-PaddleOCR
+DocRectification
 ├── README.md
 ├── requirments.txt  // 安装依赖
 │
@@ -45,7 +45,7 @@ PaddleOCR
 │       ├── det_db_icdar15_reader.yml // 数据读取
 │       └── det_mv3_db.yml            // 训练配置
 │                                  
-├── ppocr            // 网络核心代码
+├── models           // 网络核心代码
 │   ├── data         // 数据处理
 │   │   ├── det   // 检测
 │   │   │   ├── data_augment.py       // 数据增广操作
